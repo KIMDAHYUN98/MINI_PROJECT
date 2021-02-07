@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -101,7 +102,7 @@
 			window.open(url, "아이디 중복 체크" , "width=500, height=300, top=100, left=100");
 		}
 	}
-	
+
     function execPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -135,10 +136,10 @@
                         extraAddr = ' (' + extraAddr + ')';
                     }
                     // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                    document.getElementById("sample6_detailAddress").value = extraAddr;
                 
                 } else {
-                    document.getElementById("sample6_extraAddress").value = '';
+                    document.getElementById("sample6_detailAddress").value = '';
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
@@ -211,14 +212,27 @@
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="far fa-address-card"></i></span>
 					</div>
-					<input name="mAdr" id="mAdr" class="form-control" placeholder="Your Adress" type="text">
+					<input type="text" id="sample6_postcode" placeholder="우편번호" class="form-control">
+					<input type="button" onclick="execPostcode()" value="우편번호 찾기">
+				</div>
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="far fa-address-card"></i></span>
+					</div>
+					<input type="text" id="sample6_address" name="mAdr" placeholder="주소" class="form-control">
+				</div>
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="far fa-address-card"></i></span>
+					</div>
+					<input type="text" id="sample6_detailAddress" name="mAdr" placeholder="상세주소" class="form-control">
 				</div>
 				<!-- birthday -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fas fa-birthday-cake"></i></span>
 					</div>
-					<input name="mBirth" id="mBirth" class="form-control" placeholder="Birth day" type="text">
+					<input name="mBirth" id="mBirth" class="form-control" placeholder="Birth day" type="date">
 				</div>
 				<!-- form-group// -->
 				<div class="form-group">
